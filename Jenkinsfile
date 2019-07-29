@@ -13,7 +13,7 @@ pipeline {
 
         stage ('Build') {
             steps {
-                sh 'mvn -maven.test.failure.ignore=true install'
+                sh 'mvn clean package'
             }
             post {
                 success {
