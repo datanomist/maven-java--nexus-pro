@@ -14,9 +14,9 @@ node {
       sh 'mvn clean package'
         currentBuild.result = 'SUCCESS'
         catch(e){
-      currentBuild.result = 'FAILURE'
-                echo "ERROR: ${e}"
-            } finally {
+      currentBuild.result = 'FAILURE
+            }
+         finally {
                emailNotification() 
             }
             def emailNotification() {
@@ -25,3 +25,5 @@ node {
       subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
       body: "${BUILD_URL} has result ${currentBuild.currentResult}"
      )
+            }
+      }
