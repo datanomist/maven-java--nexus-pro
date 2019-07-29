@@ -3,16 +3,12 @@ node {
    def mvnHome
   stage('Checkout') { // for display purposes
       checkout scm
-   }
-   steps {
-      echo 'Hello, Maven'
-      sh 'mvn --version'
-   }
-   stages
-   stage('build') {
-      steps {
-         sh 'mvn clean package'
-      }
-   }
+   }stages { 
+        stage('Build') { 
+            steps { 
+               echo 'This is a minimal pipeline.' 
+            }
+        }
+    }
 }
    
