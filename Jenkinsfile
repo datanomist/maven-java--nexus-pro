@@ -18,6 +18,14 @@ pipeline {
                 success {
                     junit 'target/surefire-reports/**/*.xml'
                     archive 'target/*.war'
+                    stage('publish build info') {
+                        steps {
+                            script {
+                                
+                                server.publishBuildinfo buildinfo
+                            }
+                        }
+                    }
                 }
             }
         }
