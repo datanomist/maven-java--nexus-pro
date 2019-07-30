@@ -17,7 +17,7 @@ pipeline {
             post {
                 success {
                     junit 'target/surefire-reports/**/*.xml'
-                    archive 'target/*.war
+                    archive 'target/*.war'
                 }
             }
         }
