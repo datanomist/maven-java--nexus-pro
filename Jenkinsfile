@@ -17,6 +17,14 @@ pipeline {
                 success {
                     junit 'target/surefire-reports/**/*.xml'
                     archive 'target/*.war'
+                    stage('Artifactory download and upload'){
+            steps {
+                script{
+                    // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
+                    def server = Artifactory.server SERVER_ID
+                }
+            }
+                    }
                 }
             }
         }
