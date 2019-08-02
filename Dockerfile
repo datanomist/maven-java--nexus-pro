@@ -12,7 +12,7 @@ stages {
 stage('Deploy Image') {
   steps{
     script {
-      docker.withRegistry( '', registryCredential ) {
+      docker.withRegistry( '', userName:awsdocker789,password:aws427400 ) {
         dockerImage.push()
       }
     }
